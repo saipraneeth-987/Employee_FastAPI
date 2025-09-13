@@ -15,17 +15,17 @@ Pydantic – for request validation and schema enforcement
 
 ⚙️ Setup Instructions
 1. Clone the repository
-'''
+```
 git clone https://github.com/saipraneeth-987/Employee_FastAPI.git
 cd Employee_FastAPI
-''' 
+``` 
 
 2. Install dependencies
 
 Make sure you are using Python 3.9+.
-'''
+```
 pip install fastapi uvicorn pymongo python-dateutil
-'''
+```
 
 3. Start MongoDB
 
@@ -37,9 +37,9 @@ Database: assessment_db
 Collection: employees
 
 4. Run the FastAPI server
-'''
+```
 uvicorn main:app --reload
-'''
+```
 
 The API will be available at:
 👉 http://127.0.0.1:8000
@@ -48,18 +48,18 @@ Swagger UI docs:
 👉 http://127.0.0.1:8000/docs
 
 📂 Project Structure
-'''
+```
 ├── database.py   # MongoDB connection & collection setup
 ├── models.py     # Pydantic models for validation
 ├── main.py       # FastAPI routes & CRUD operations
-'''
+```
 
 🚀 API Endpoints
 1. Create Employee
 
 POST /employees
 Request body:
-'''
+```
 {
   "employee_id": "E123",
   "name": "John Doe",
@@ -68,7 +68,7 @@ Request body:
   "joining_date": "2023-01-15",
   "skills": ["Python", "MongoDB", "APIs"]
 }
-'''
+```
 
 2. Get Employee by ID
 
@@ -78,12 +78,12 @@ GET /employees/{employee_id}
 
 PUT /employees/{employee_id}
 Request body (any field optional):
-'''
+```
 {
   "salary": 85000,
   "department": "R&D"
 }
-'''
+```
 
 4. Delete Employee
 
@@ -98,12 +98,12 @@ Returns employees sorted by joining_date (newest first).
 
 GET /employees/avg-salary
 Response example:
-'''
+```
 [
   { "department": "Engineering", "avg_salary": 80000 },
   { "department": "HR", "avg_salary": 60000 }
 ]
-'''
+```
 7. Search Employees by Skill
 
 GET /employees/search?skill=Python
